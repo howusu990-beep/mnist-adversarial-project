@@ -1,8 +1,3 @@
-
-Here’s a clean, professional **README.md** you can paste directly into your GitHub repo:
-
----
-
 # **Adversarial Attacks and Defenses in Deep Learning (MNIST Case Study)**
 
 ## 📌 **Overview**
