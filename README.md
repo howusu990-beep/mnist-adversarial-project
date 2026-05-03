@@ -1,63 +1,129 @@
-# MNIST Adversarial Attack and Defense Project
 
-## 📌 Overview
-This project demonstrates how adversarial attacks affect a neural network trained on the MNIST dataset and evaluates a defense mechanism to improve robustness. The model is first trained under normal conditions, then attacked using the Fast Gradient Sign Method (FGSM), and finally improved using adversarial training.
+Here’s a clean, professional **README.md** you can paste directly into your GitHub repo:
 
 ---
 
-## 🧠 Model Description
-- Dataset: MNIST (handwritten digits 0–9)
-- Model: Feedforward neural network
-- Framework: PyTorch
+# **Adversarial Attacks and Defenses in Deep Learning (MNIST Case Study)**
+
+## 📌 **Overview**
+
+This project demonstrates how machine learning models can be attacked and defended using adversarial techniques. A neural network is trained on the MNIST dataset, attacked using the Fast Gradient Sign Method (FGSM), and then improved using adversarial training.
 
 ---
 
-## ⚔️ Adversarial Attack (FGSM)
-The Fast Gradient Sign Method (FGSM) is used to generate adversarial examples by adding small perturbations to input images. These perturbations are designed to increase the model’s prediction error.
+## 🎯 **Objectives**
+
+* Build a neural network classifier using MNIST
+* Apply an adversarial attack (FGSM)
+* Measure the drop in model accuracy
+* Implement a defense (adversarial training)
+* Evaluate improvement after defense
 
 ---
 
-## 🛡️ Defense Method
-Adversarial training is implemented by retraining the model using adversarial examples. This helps the model learn to handle both normal and manipulated inputs, improving its robustness.
+## 🛠️ **Technologies Used**
+
+* Python
+* PyTorch
+* NumPy
+* Matplotlib
 
 ---
 
-## 📊 Results
+## 📂 **Project Structure**
 
-| Scenario              | Accuracy |
-|----------------------|----------|
-| Baseline             | ~97%     |
-| Under FGSM Attack    | ~1%      |
-| After Defense        | ~66%     |
-
-### 📈 Performance Graph
-![Model Results](results.png)
-
----
-
-## ▶️ How to Run
-
-1. Install dependencies:
-   pip install torch torchvision matplotlib
-
-2. Run the project:
+```
+mnist_adversarial_project/
+│── data/                 # MNIST dataset
+│── train.py              # Model definition and training
+│── attack.py             # FGSM attack implementation
+│── defense.py            # Adversarial training defense
+│── main.py               # Runs full pipeline
+│── results.png           # Performance graph
+```
 
 ---
 
-## 📁 Project Structure
-mnist-adversarial-project/
-│── main.py
-│── results.png
-│── README.md
+## 🚀 **How to Run the Project**
+
+### 1. Install dependencies
+
+```bash
+pip install torch torchvision numpy matplotlib
+```
+
+### 2. Run the project
+
+```bash
+python main.py
+```
 
 ---
 
-## 📚 References
-- Goodfellow, I. J., Shlens, J., & Szegedy, C. (2015). Explaining and harnessing adversarial examples.
-- LeCun, Y., Cortes, C., & Burges, C. (2010). MNIST handwritten digit database.
-- Madry, A., Makelov, A., Schmidt, L., Tsipras, D., & Vladu, A. (2018). Towards deep learning models resistant to adversarial attacks.
+## 📊 **Results**
+
+| Stage               | Accuracy |
+| ------------------- | -------- |
+| Baseline            | 96.74%   |
+| Under Attack (FGSM) | 1.33%    |
+| After Defense       | 69.25%   |
+
+👉 The FGSM attack causes a significant drop in performance, while adversarial training improves robustness.
 
 ---
 
-## 🎯 Summary
-This project highlights the importance of evaluating both performance and security in machine learning systems. While models may achieve high accuracy, they can still be vulnerable to adversarial attacks, making defense strategies essential for real-world applications.
+## 📉 **Visualization**
+
+The results are visualized in `results.png`, showing:
+
+* High baseline accuracy
+* Sharp drop under attack
+* Partial recovery after defense
+
+---
+
+## ⚔️ **Adversarial Attack (FGSM)**
+
+FGSM perturbs input images using gradients:
+
+[
+x_{adv} = x + \epsilon \cdot \text{sign}(\nabla_x J(x, y))
+]
+
+This creates small changes that cause the model to misclassify inputs.
+
+---
+
+## 🛡️ **Defense: Adversarial Training**
+
+The model is retrained using adversarial examples, allowing it to:
+
+* Learn more robust patterns
+* Reduce sensitivity to small perturbations
+* Improve performance under attack
+
+---
+
+## 📈 **Key Findings**
+
+* High accuracy does not mean robustness
+* Small perturbations can break models
+* Adversarial training significantly improves security
+* Defense does not fully restore original performance
+
+---
+
+## 📚 **References**
+
+* Goodfellow et al. (2015) – Adversarial Examples
+* Madry et al. (2018) – Adversarial Training
+* MNIST Dataset – Yann LeCun
+
+---
+
+## 👤 **Author**
+
+Henrietta Owusu
+CTEC 450 – AI Security Project
+
+
