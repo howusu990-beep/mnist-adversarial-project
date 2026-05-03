@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 from train import Net, load_data, train_model, evaluate
 from attack import attack_model, fgsm_attack
 from defense import adversarial_training
-python main.py
 # Load data
 train_loader, test_loader = load_data()
 
